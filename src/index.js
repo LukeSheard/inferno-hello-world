@@ -1,8 +1,18 @@
+import Component from 'inferno-component';
 import Inferno from 'inferno';
+import InfernoDOM from 'inferno-dom';
 import {
   render,
 } from 'inferno-dom';
 
-import HelloWorld from './HelloWorld.jsx';
+class HelloWorld extends Component {
+  render() {
+    return (
+      <div>
+        Hello World
+      </div>
+    );
+  }
+}
 
 render(<HelloWorld />, document.getElementById('app-mount'));
