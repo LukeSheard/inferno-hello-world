@@ -12,9 +12,17 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.js$/,
-				loader: 'babel-loader'
+				test: /\.jsx?$/,
+				loader: 'babel',
+				exclude: /node_modules\/dist/
 			}
+		]
+	},
+	resolve: {
+		extensions: [
+			'',
+			'.js',
+			'.jsx'
 		]
 	},
 	devServer: {

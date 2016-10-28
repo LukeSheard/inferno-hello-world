@@ -1,44 +1,14 @@
 import createBrowserHistory from 'history/createBrowserHistory';
+import Component from 'inferno/dist/inferno-component';
 import Inferno from 'inferno/dist/inferno';
 import {
   Router, 
-  Route, 
-  Link
+  Route
 } from 'inferno/dist/inferno-router';
 
-const App = ({ children }) => (
-  <div>
-    <nav>
-      <Link to="/" activeClassName="active">
-        About
-      </Link>
-      <Link to="/luke" activeClassName="active">
-        Luke
-      </Link>
-      <Link to="/john" activeClassName="active">
-        John
-      </Link>
-    </nav>
-    <main>
-      {children}
-    </main>
-  </div>
-);
-
-const About = () => (
-  <div>
-    About
-  </div>
-);
-
-const User = (...args) => {
-  console.log(args);
-  return (
-    <div>
-      About
-    </div>
-  );
-}
+import About from './About';
+import App from './App';
+import User from './User';
 
 const history = createBrowserHistory();
 
