@@ -28,11 +28,11 @@ class App extends Component {
         <div>
             <nav>
                 <Link to="/" activeClassName="active">
-                    About
+                    Home
                 </Link>
-                <Link to="/luke" activeClassName="active">
-                    Luke
-                </Link>
+                <a onClick={this.handleLogin}>
+                    Click to fail
+                </a>
             </nav>
             <main>
                 {children}
