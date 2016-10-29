@@ -2,10 +2,10 @@ const webpack = require('webpack');
 const glob = require('glob');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: {
+        bundle: './src/index.js'
+    },
 	output: {
-		path: '.',
-		filename: 'bundle.js',
 		publicPath: 'http://localhost:8080/'
 	},
 	//devtool: 'source-map',
@@ -13,8 +13,8 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.jsx?$/,
-				loader: 'babel',
-				exclude: /node_modules\/dist/
+				loader: 'babel-loader',
+				exclude: /node_modules/
 			}
 		]
 	},

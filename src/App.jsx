@@ -1,12 +1,10 @@
-import Component from 'inferno/dist/inferno-component';
-import Inferno from 'inferno/dist/inferno';
-import {
-  Link
-} from 'inferno/dist/inferno-router';
+import Component from 'inferno-component';
+import Inferno from 'inferno';
+import { Link } from 'inferno-router';
 export default class App extends Component {
   render() {
     const {
-      children, 
+      children,
     } = this.props;
 
     return (

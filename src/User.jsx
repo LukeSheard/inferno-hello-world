@@ -1,5 +1,5 @@
-import Component from 'inferno/dist/inferno-component';
-import Inferno from 'inferno/dist/inferno';
+import Component from 'inferno-component';
+import Inferno from 'inferno';
 
 export default class App extends Component {
   render() {
