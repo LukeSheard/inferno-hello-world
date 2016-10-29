@@ -26,6 +26,30 @@
         main {
             padding: 1rem;
         }
+        .spinner-wrapper {
+            position: absolute;
+            text-align: center;
+            margin-top: 10%;
+            width: 100%;
+            pointer-events: none;
+            -webkit-user-select: none;
+        }
+
+        .spinner {
+            animation: rotator 1.4s linear infinite;
+        }
+
+        @keyframes rotator {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(270deg); }
+        }
+
+        .path {
+            stroke-dasharray: 187;
+            stroke-dashoffset: 0;
+            transform-origin: center;
+            animation: dash 1.4s ease-in-out infinite, colors 6.8s ease-in-out infinite;
+        }
     </style>
 </head>
 <body>

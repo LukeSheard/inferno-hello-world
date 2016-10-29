@@ -1,29 +1,45 @@
-import Component from 'inferno-component';
 import Inferno from 'inferno';
+import Component from 'inferno-component';
 import { Link } from 'inferno-router';
-export default class App extends Component {
-  render() {
-    const {
-      children,
-    } = this.props;
+import { connect } from 'inferno-mobx';
+import Loading from './Loading'
 
-    return (
-      <div>
-        <nav>
-          <Link to="/" activeClassName="active">
-            About
-          </Link>
-          <Link to="/luke" activeClassName="active">
-            Luke
-          </Link>
-          <Link to="/john" activeClassName="active">
-            John
-          </Link>
-        </nav>
-        <main>
-          {children}
-        </main>
-      </div>
-    )
-  }
+class App extends Component {
+
+    state = { loading: false }
+
+    handleLogin = (e) => {
+        e.preventDefault()
+        const { router } = this.context
+        this.setState({ loading: true })
+        router.push('/luke')
+    }
+
+    render() {
+        const { children } = this.props;
+
+        const { loading } = this.state
+
+        if (loading) {
+            return <Loading/>
+        }
+
+        return (
+        <div>
+            <nav>
+                <Link to="/" activeClassName="active">
+                    About
+                </Link>
+                <Link to="/luke" activeClassName="active">
+                    Luke
+                </Link>
+            </nav>
+            <main>
+                {children}
+            </main>
+        </div>
+        )
+    }
 }
+
+export default connect(App);

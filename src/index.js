@@ -1,5 +1,5 @@
-import createBrowserHistory from 'history/createBrowserHistory';
 import Inferno from 'inferno';
+import createBrowserHistory from 'history/createBrowserHistory';
 import { Router, Route } from 'inferno-router';
 import About from './About';
 import App from './App';
